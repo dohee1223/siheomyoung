@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>미궁게임 - 문제 1</title>
+</head>
+<body>
+    <h1>미궁게임 - 문제 1</h1>
+    <p>문제: 정답은 무엇인가?</p>
+    <a href="0901.html">
+        <img src="시험용.jpg" alt="힌트 사진" style="width: 300px; height: auto;">
+    </a>
+    <a href="0902.html">
+        <img src="고양이.jpg" alt="힌트 사진" style="display: block;">
+    </a>
+    <a href="0903.html">
+        <img src="병아리.jpg" alt="힌트 사진" style="display: block;">
+    </a>
+    <form onsubmit="return checkAnswer()">
+        <input type="text" id="answer" placeholder="정답 입력">
+        <button type="submit">제출</button>
+    </form>
+    <p id="feedback" style="color: red;"></p>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+            if (answer === "딸기") {  // 정답 확인
+                window.location.href = "question2.html"; // 다음 페이지로 이동
+            } else {
+                document.getElementById('feedback').innerText = "틀렸습니다. 다시 시도하세요.";
+            }
+            return false;  // 페이지 새로고침 방지
+        }
+    </script>
+</body>
+</html>
